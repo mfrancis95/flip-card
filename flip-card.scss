@@ -1,0 +1,32 @@
+@mixin size100 {
+    height: 100%;
+    width: 100%;
+}
+
+.flip-card-outer {
+    perspective: 1000px;
+
+    &:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+}
+
+.flip-card-inner {
+    @include size100;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.flip-card-left:hover .flip-card-inner {
+    transform: rotateY(-180deg);
+}
+
+.flip-card-back, .flip-card-front {
+    @include size100;
+    backface-visibility: hidden;
+    position: absolute;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+}
