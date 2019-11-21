@@ -1,0 +1,10 @@
+deploy:
+    access_key_id: $ACCESS_KEY
+    bucket: $BUCKET
+    edge: true
+    endpoint: $ENDPOINT
+    force_path_style: true
+    provider: s3
+    secret_access_key: $SECRET_KEY
+install: gem install sass
+script: sass flip-card.scss flip-card.css
